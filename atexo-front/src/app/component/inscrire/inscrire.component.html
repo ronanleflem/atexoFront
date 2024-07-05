@@ -71,4 +71,9 @@
         <button class="btn waves-effect waves-light" type="submit" name="action">Soumettre</button>
       </div>
     </form>
+    <!-- Affichage du numéro généré -->
+    <div *ngIf="numeroGenere">
+        <h5>Numéro généré :</h5>
+        <p>{{ numeroGenere }}</p>
+    </div>
   </div>
