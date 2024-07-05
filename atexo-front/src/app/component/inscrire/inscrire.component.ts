@@ -24,6 +24,8 @@ export class InscrireComponent {
   constructor(private inscritService: InscritService) { }
 
   onSubmit() {
+    console.log('inscrit:', this.inscrit);
+    console.log('criteres:', this.criteres);
     this.inscritService.creerInscrit(this.inscrit, this.criteres).subscribe(numero => {
       console.log('Numéro généré:', numero);
     });

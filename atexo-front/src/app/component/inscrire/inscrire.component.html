@@ -1,15 +1,74 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-        <label for="nom">Nom:</label>
-        <input id="nom" [(ngModel)]="inscrit.nom" name="nom" required>
-    </div>
-    <div>
-        <label for="prenom">Prénom:</label>
-        <input id="prenom" [(ngModel)]="inscrit.prenom" name="prenom" required>
-    </div>
-    <div>
-        <label for="dateNaissance">Date de Naissance:</label>
-        <input id="dateNaissance" [(ngModel)]="inscrit.dateNaissance" name="dateNaissance" required>
-    </div>
-    <button type="submit">Soumettre</button>
-</form>
+<div class="container">
+    <h3>Inscription</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="nom" type="text" class="validate" [(ngModel)]="inscrit.nom" name="nom" required>
+          <label for="nom">Nom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="prenom" type="text" class="validate" [(ngModel)]="inscrit.prenom" name="prenom" required>
+          <label for="prenom">Prénom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="dateNaissance" type="date" class="validate" [(ngModel)]="inscrit.dateNaissance" name="dateNaissance" required>
+          <label for="dateNaissance">Date de Naissance</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="compteur" type="number" class="validate" [(ngModel)]="inscrit.compteur" name="compteur" required>
+          <label for="compteur">Compteur</label>
+        </div>
+      </div>
+  
+      <h5>Critères de Numérotation</h5>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="prenomLongueur" type="number" class="validate" [(ngModel)]="criteres.prenomCritere.longueur" name="prenomLongueur" required>
+          <label for="prenomLongueur">Longueur du Prénom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="prenomSuffixe" type="text" class="validate" [(ngModel)]="criteres.prenomCritere.suffixe" name="prenomSuffixe">
+          <label for="prenomSuffixe">Suffixe du Prénom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="prenomOrdre" type="number" class="validate" [(ngModel)]="criteres.prenomCritere.ordre" name="prenomOrdre" required>
+          <label for="prenomOrdre">Ordre du Prénom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="nomLongueur" type="number" class="validate" [(ngModel)]="criteres.nomCritere.longueur" name="nomLongueur" required>
+          <label for="nomLongueur">Longueur du Nom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="nomSuffixe" type="text" class="validate" [(ngModel)]="criteres.nomCritere.suffixe" name="nomSuffixe">
+          <label for="nomSuffixe">Suffixe du Nom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="nomOrdre" type="number" class="validate" [(ngModel)]="criteres.nomCritere.ordre" name="nomOrdre" required>
+          <label for="nomOrdre">Ordre du Nom</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="datePrefixe" type="text" class="validate" [(ngModel)]="criteres.dateCritere.prefixe" name="datePrefixe">
+          <label for="datePrefixe">Préfixe de la Date</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="dateOrdre" type="number" class="validate" [(ngModel)]="criteres.dateCritere.ordre" name="dateOrdre" required>
+          <label for="dateOrdre">Ordre de la Date</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="compteurInitial" type="number" class="validate" [(ngModel)]="criteres.compteurCritere.longueur" name="compteurInitial" required>
+          <label for="compteurInitial">Longueur du Compteur</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="compteurPrefixe" type="text" class="validate" [(ngModel)]="criteres.compteurCritere.prefixe" name="compteurPrefixe">
+          <label for="compteurPrefixe">Préfixe du Compteur</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="compteurOrdre" type="number" class="validate" [(ngModel)]="criteres.compteurCritere.ordre" name="compteurOrdre" required>
+          <label for="compteurOrdre">Ordre du Compteur</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Soumettre</button>
+      </div>
+    </form>
+  </div>

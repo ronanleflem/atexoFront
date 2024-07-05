@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InscritService {
-  private apiUrl = 'http://localhost:8080/api/inscrits';
+  private apiUrl = 'http://localhost:8090/api/inscrits';
 
   constructor(private http: HttpClient) { }
 
