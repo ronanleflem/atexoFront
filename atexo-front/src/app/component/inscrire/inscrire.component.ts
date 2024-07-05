@@ -15,18 +15,10 @@ export class InscrireComponent {
   };
 
   criteres = {
-    prenomLongueur: 3,
-    prenomSuffixe: '-',
-    prenomOrdre: 1,
-    nomLongueur: 4,
-    nomSuffixe: '_',
-    nomOrdre: 2,
-    datePrefixe: 'N',
-    dateOrdre: 3,
-    compteurInitial: 10,
-    compteurPrefixe: 'C',
-    compteurLongueur: 5,
-    compteurOrdre: 4
+    prenomCritere: { longueur: 3, suffixe: '-', ordre: 1, prefixe: null },
+    nomCritere: { longueur: 4, suffixe: '_', ordre: 2, prefixe: null },
+    dateCritere: { longueur: 0, suffixe: '', ordre: 3, prefixe: 'N' },
+    compteurCritere: { longueur: 5, suffixe: '', ordre: 4, prefixe: 'C' }
   };
 
   constructor(private inscritService: InscritService) { }
