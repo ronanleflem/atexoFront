@@ -10,8 +10,9 @@ export class InscritService {
 
   constructor(private http: HttpClient) { }
 
-  creerInscrit(inscrit: any, criteres: any): Observable<string> {
+  creerInscrit(inscrit: any, criteres: any): Observable<any> {
     const payload = { inscrit, criteres };
-    return this.http.post<string>(this.apiUrl, payload);
+    
+    return this.http.post<any>(this.apiUrl, payload);
   }
 }

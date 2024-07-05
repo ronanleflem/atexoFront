@@ -20,14 +20,25 @@ export class InscrireComponent {
     dateCritere: { longueur: 0, suffixe: '', ordre: 3, prefixe: 'N' },
     compteurCritere: { longueur: 5, suffixe: '', ordre: 4, prefixe: 'C' }
   };
+  
+  numeroGenere: string = '';
 
   constructor(private inscritService: InscritService) { }
 
   onSubmit() {
-    console.log('inscrit:', this.inscrit);
-    console.log('criteres:', this.criteres);
-    this.inscritService.creerInscrit(this.inscrit, this.criteres).subscribe(numero => {
-      console.log('Numéro généré:', numero);
-    });
+    const observer = {
+      next: (response: any) => {
+        this.numeroGenere = response.numero;
+        console.log('Numéro généré:', this.numeroGenere);
+      },
+      error: (error: any) => {
+        console.error('Erreur lors de la création de l\'inscrit:', error);
+      },
+      complete: () => {
+        console.log('Requête complétée');
+      }
+    };
+
+    this.inscritService.creerInscrit(this.inscrit, this.criteres).subscribe(observer);
   }
 }
