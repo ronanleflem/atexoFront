@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="nom">Nom:</label>
+        <input id="nom" [(ngModel)]="inscrit.nom" name="nom" required>
+    </div>
+    <div>
+        <label for="prenom">Prénom:</label>
+        <input id="prenom" [(ngModel)]="inscrit.prenom" name="prenom" required>
+    </div>
+    <div>
+        <label for="dateNaissance">Date de Naissance:</label>
+        <input id="dateNaissance" [(ngModel)]="inscrit.dateNaissance" name="dateNaissance" required>
+    </div>
+    <button type="submit">Soumettre</button>
+</form>
